@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import com.toyproject.lol.service.ChampionLotaionService;
+import com.toyproject.lol.service.ChampionLotationService;
+
 @RestController
-public class a {
+public class ChampionLotationController {
 
     @Autowired
-    private ChampionLotaionService championLotaionService;
+    private ChampionLotationService championLotaionService;
 
     private static final String LOL_ENDPOINT = "https://kr.api.riotgames.com/lol/platform";
 
@@ -22,7 +23,7 @@ public class a {
     @ResponseStatus(value = HttpStatus.OK)
     public String getApiTestGet(final HttpServletRequest Request) throws Exception {
         String urlPath = LOL_ENDPOINT + "/v3/champion-rotations";
-        championLotaionService.getChampionRotationsObject();
+        championLotaionService.getChampionRotationsObject(LOL_ENDPOINT+LOL_ENDPOINT);
         return "{\"result\":\"get\"}";
     }
 
